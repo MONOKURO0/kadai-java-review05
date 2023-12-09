@@ -22,12 +22,14 @@ public class Review05 {
 
             /* DBと接続する */
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/world?useSSL=false&allowPublicKeyRetrieval=true",
+                    //"jdbc:mysql://localhost/world?useSSL=false&allowPublicKeyRetrieval=true",
+                    "jdbc:mysql://localhost/kadaidb?useSSL=false&allowPublicKeyRetrieval=true",
                     "root",
                     "password");
 
             /* DBとやりとりする窓口（PreparedStatementオブジェクト）の作成 */
-            String sql = "SELECT * FROM kadaidb.person WHERE id = ?";
+            //String sql = "SELECT * FROM kadaidb.person WHERE id = ?";
+            String sql = "SELECT * FROM person WHERE id = ?";
             pstmt = con.prepareStatement(sql);
 
             /* Select文の実行と結果を格納／代入 */
